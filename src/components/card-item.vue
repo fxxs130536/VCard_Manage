@@ -28,10 +28,11 @@ export default {
 .card {
   width: 350rpx;
   height: 200rpx;
-  /* background-color: red; */
+  background-color: rgba(45, 185, 245, 0.3);
   border-radius: 5px;
   display: flex;
   flex-direction: row;
+  margin-left: 17rpx;
 }
 .card-left {
   padding-top: 50rpx;

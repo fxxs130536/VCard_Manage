@@ -1,0 +1,6 @@
+<import src="mesg-list$7ac7aaeb" />
+<template name="list$3a88963d">
+  <view class="_div data-v-719db5a6 page">
+    <template data="{{...$root[$kk+'0'], $root}}" is="mesg-list$7ac7aaeb"></template>
+  </view>
+</template>

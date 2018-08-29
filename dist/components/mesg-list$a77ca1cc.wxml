@@ -1,0 +1,19 @@
+<template name="mesg-list$a77ca1cc">
+  <view class="_ul data-v-4f9f8938 mesg-list">
+    <view class="_li data-v-4f9f8938 mesg-items" wx:key="index" key="{{index}}" bindtap="handleProxy" data-eventid="{{'0-'+index}}" data-comkey="{{$k}}" wx:for="{{list}}" wx:for-index="index" wx:for-item="items">
+      <i-row class="_i-row data-v-4f9f8938">
+        <i-col span="5" i-class="col-class mesg-img" class="_i-col data-v-4f9f8938">
+          <image class="_img data-v-4f9f8938 mesg-img fl" src="https://i.loli.net/2017/08/21/599a521472424.jpg" alt></image>
+        </i-col>
+        <i-col offset="1" span="12" i-class="col-class" class="_i-col data-v-4f9f8938">
+          <view class="_p data-v-4f9f8938 mesg-t text-oh font-color-title">刘德华</view>
+          <view class="_p data-v-4f9f8938 mesg-s text-oh font-color-sub">你好我是董小姐，帅哥赶紧过来，你好我是董小姐，帅哥赶紧过来，你好我是董小姐，帅哥赶紧过来</view>
+        </i-col>
+        <i-col span="6" i-class="col-class " class="_i-col data-v-4f9f8938">
+          <view class="_p data-v-4f9f8938 mesg-s  text-oh text-right font-color-sub">2018-07-11</view>
+        </i-col>
+      </i-row>
+      <view class="_div data-v-4f9f8938"></view>
+    </view>
+  </view>
+</template>

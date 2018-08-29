@@ -1,0 +1,32 @@
+@import "/static/css/vendor.wxss";
+
+.customer-title.data-v-27bd2556 {
+  background: #ffffff;
+}
+.tran.data-v-27bd2556 {
+  display: inline-block;
+  transform: rotate(90deg);
+}
+.text-center.data-v-27bd2556 {
+  text-align: center;
+  background: #e9eaec;
+  color: #495060;
+  font-size: 24rpx;
+}
+.mesg-items.data-v-f656399c {
+  padding: 16rpx;
+  border-bottom: 2rpx solid #dddee1;
+}
+.mesg-items .mesg-img.data-v-f656399c {
+  width: 100%;
+  height: 120rpx;
+}
+.mesg-items .mesg-t.data-v-f656399c {
+  font-size: 28rpx;
+  color: #495060;
+  padding: 8rpx 0;
+}
+.mesg-items .mesg-s.data-v-f656399c {
+  font-size: 24rpx;
+  color: #80848f;
+}

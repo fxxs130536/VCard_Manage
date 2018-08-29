@@ -1,0 +1,19 @@
+@import "/static/css/vendor.wxss";
+
+.mesg-items.data-v-4f9f8938 {
+  padding: 16rpx;
+  border-bottom: 2rpx solid #dddee1;
+}
+.mesg-items .mesg-img.data-v-4f9f8938 {
+  width: 100%;
+  height: 120rpx;
+}
+.mesg-items .mesg-t.data-v-4f9f8938 {
+  font-size: 28rpx;
+  color: #495060;
+  padding: 8rpx 0;
+}
+.mesg-items .mesg-s.data-v-4f9f8938 {
+  font-size: 24rpx;
+  color: #80848f;
+}

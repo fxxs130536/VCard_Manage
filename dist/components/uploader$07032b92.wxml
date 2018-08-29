@@ -1,0 +1,33 @@
+<template name="uploader$07032b92">
+  <view class="_div data-v-44177682 weui-cells">
+    <view class="_div data-v-44177682 weui-cell">
+      <view class="_div data-v-44177682 weui-cell__bd">
+        <view class="_div data-v-44177682 weui-uploader m-x-1">
+          <view class="_div data-v-44177682 weui-uploader__hd">
+            <i-cell i-class="m-b-1" title="{{title}}" class="_i-cell data-v-44177682">
+              <label slot="footer" wx:if="{{max}}" class="_span data-v-44177682">{{files.length}}/{{max}}</label>
+            </i-cell>
+          </view>
+          <view class="_div data-v-44177682 weui-uploader__bd">
+            <view class="_div data-v-44177682 weui-uploader__files clearfix ">
+              <view class="_div data-v-44177682 upimg-list" wx:key="file.path" key="{{file.path}}" wx:for="{{files}}" wx:for-index="index" wx:for-item="file">
+                <view bindtap="handleProxy" data-eventid="{{'0-'+index}}" data-comkey="{{$k}}" class="_div data-v-44177682 {{['weui-uploader__file', [file.hasMask ? 'weui-uploader__file_status' : '']]}}">
+                  <image class="_img data-v-44177682 weui-uploader__img" mode="aspectFill" src="{{file.path}}"></image>
+                  <view class="_div data-v-44177682 weui-uploader__file-content" wx:if="{{file.hasMask}}">
+                    <i-icon wx:if="{{file.failure}}" color="#F43530" type="prompt_fill" size="23" class="_i-icon data-v-44177682"></i-icon>
+                    <label wx:else class="_span data-v-44177682">{{file.progress + '%'}}</label>
+                  </view>
+                </view>
+              </view>
+              <view class="_div data-v-44177682 weui-uploader__input-box clearfix">
+                <view class="_div data-v-44177682 weui-uploader__input center-a" bindtap="handleProxy" data-eventid="{{'1'}}" data-comkey="{{$k}}">
+                  <i-icon type="add" color="#80848f" size="34" class="_i-icon data-v-44177682"></i-icon>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>

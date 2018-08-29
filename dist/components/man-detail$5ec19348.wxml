@@ -1,0 +1,52 @@
+<template name="man-detail$5ec19348">
+  <view class="_div data-v-b0223b90 mesg-list">
+    <view class="_div data-v-b0223b90 mesg-items" bindtap="handleProxy" data-eventid="{{'0'}}" data-comkey="{{$k}}">
+      <i-row class="_i-row data-v-b0223b90">
+        <i-col span="5" i-class="col-class mesg-img" class="_i-col data-v-b0223b90">
+          <image class="_img data-v-b0223b90 mesg-img fl" src="https://i.loli.net/2017/08/21/599a521472424.jpg" alt></image>
+        </i-col>
+        <i-col offset="1" span="14" i-class="col-class" class="_i-col data-v-b0223b90">
+          <view class="_p data-v-b0223b90 mesg-t text-oh font-color-title">高档名片在你的名片上互动了22次</view>
+        </i-col>
+        <i-col span="4" i-class="col-class" class="_i-col data-v-b0223b90">
+          <view class="_div data-v-b0223b90 icon-col">
+            <i-icon type="enter" color="#80848f" size="28" wx:if="{{!openItem}}" class="_i-icon data-v-b0223b90"></i-icon>
+            <i-icon type="unfold" color="#80848f" size="28" wx:if="{{openItem}}" class="_i-icon data-v-b0223b90"></i-icon>
+          </view>
+        </i-col>
+      </i-row>
+      <view wx:if="{{openItem}}" class="_div data-v-b0223b90">
+        <i-row i-class="row-class" class="_i-row data-v-b0223b90">
+          <i-col span="5" i-class="row-text" class="_i-col data-v-b0223b90">查看名片</i-col>
+          <i-col span="19" i-class class="_i-col data-v-b0223b90">
+            <i-progress percent="15" status="active" class="_i-progress data-v-b0223b90"></i-progress>
+          </i-col>
+        </i-row>
+        <i-row i-class="row-class" class="_i-row data-v-b0223b90">
+          <i-col span="5" i-class="row-text" class="_i-col data-v-b0223b90">呼叫手机</i-col>
+          <i-col span="19" i-class class="_i-col data-v-b0223b90">
+            <i-progress percent="35" status="success" class="_i-progress data-v-b0223b90"></i-progress>
+          </i-col>
+        </i-row>
+        <i-row i-class="row-class" class="_i-row data-v-b0223b90">
+          <i-col span="5" i-class="row-text" class="_i-col data-v-b0223b90">复制微信</i-col>
+          <i-col span="19" i-class class="_i-col data-v-b0223b90">
+            <i-progress percent="45" status="active" class="_i-progress data-v-b0223b90"></i-progress>
+          </i-col>
+        </i-row>
+        <i-row i-class="row-class" class="_i-row data-v-b0223b90">
+          <i-col span="5" i-class="row-text" class="_i-col data-v-b0223b90">查看商品</i-col>
+          <i-col span="19" i-class class="_i-col data-v-b0223b90">
+            <i-progress percent="15" status="wrong" class="_i-progress data-v-b0223b90"></i-progress>
+          </i-col>
+        </i-row>
+        <i-row i-class="row-class" class="_i-row data-v-b0223b90">
+          <i-col span="5" i-class="row-text" class="_i-col data-v-b0223b90">查看官网</i-col>
+          <i-col span="19" i-class class="_i-col data-v-b0223b90">
+            <i-progress percent="99" status="success" class="_i-progress data-v-b0223b90"></i-progress>
+          </i-col>
+        </i-row>
+      </view>
+    </view>
+  </view>
+</template>

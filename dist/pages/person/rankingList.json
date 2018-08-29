@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "排行榜",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "i-panel": "../../../static/iview/panel/index",
+    "i-tabs": "../../../static/iview/tabs/index",
+    "i-tab": "../../../static/iview/tab/index",
+    "i-avatar": "../../../static/iview/avatar/index"
+  }
+}

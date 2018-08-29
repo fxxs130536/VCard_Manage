@@ -1,0 +1,18 @@
+{
+  "navigationBarTitleText": "雷达",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "i-row": "../../../static/iview/row/index",
+    "i-col": "../../../static/iview/col/index",
+    "i-tabs": "../../../static/iview/tabs/index",
+    "i-tab": "../../../static/iview/tab/index",
+    "i-card": "../../../static/iview/card/index",
+    "i-icon": "../../../static/iview/icon/index",
+    "i-avatar": "../../../static/iview/avatar/index",
+    "i-cell-group": "../../../static/iview/cell-group/index",
+    "i-cell": "../../../static/iview/cell/index",
+    "i-collapse": "../../../static/iview/collapse/index",
+    "i-collapse-item": "../../../static/iview/collapse-item/index",
+    "i-progress": "../../../static/iview/progress/index"
+  }
+}

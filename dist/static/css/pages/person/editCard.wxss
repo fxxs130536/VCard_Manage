@@ -1,0 +1,65 @@
+@import "/static/css/vendor.wxss";
+
+.edit-img ._img.data-v-9ad456ca {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+}
+.desc-textarea.data-v-9ad456ca {
+  padding: 14rpx 30rpx;
+  font-size: 26rpx;
+  height: 176rpx;
+  line-height: 40rpx;
+  width: 100%;
+  box-sizing: border-box;
+}
+.edit-bg.data-v-9ad456ca {
+  width: 90rpx;
+  height: 90rpx;
+}
+.weui-uploader__file.data-v-4f0bb00e {
+  width: 100%;
+  height: 100%;
+}
+.upimg-list.data-v-4f0bb00e {
+  float: left;
+  width: calc((100% - (18rpx * 3))/4);
+  height: 158rpx;
+  margin-right: 18rpx;
+  margin-bottom: 18rpx;
+  border: 2rpx solid #d9d9d9;
+  box-sizing: border-box;
+}
+.weui-uploader__img.data-v-4f0bb00e {
+  display: block;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+.upimg-list.data-v-4f0bb00e:nth-child(4n + 4) {
+  margin-right: 0;
+}
+.weui-uploader__input-box.data-v-4f0bb00e {
+  float: left;
+  position: relative;
+  margin-bottom: 18rpx;
+  width: calc((100% - (18rpx * 3))/4);
+  height: 158rpx;
+  border: 2rpx solid #d9d9d9;
+}
+.weui-uploader__input.data-v-4f0bb00e {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.weui-uploader__file-content.data-v-4f0bb00e {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  color: #fff;
+}

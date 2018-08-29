@@ -1,0 +1,14 @@
+<import src="customer-list$46f98be8" />
+<template name="list$5b1780d3">
+  <view class="_div data-v-27bd2556 page">
+    <view style class="_view data-v-27bd2556">
+      <i-button i-class="customer-title" type="ghost" bindtap="handleProxy" long="true" data-eventid="{{'0'}}" data-comkey="{{$k}}" class="_i-button data-v-27bd2556">{{selctTitle !== '' ?selctTitle :selctActive[0]}}
+        <i-icon class="_i-icon data-v-27bd2556 tran" type="play_fill"></i-icon>
+      </i-button>
+    </view>
+    <i-panel title="标题" class="_i-panel data-v-27bd2556">
+      <view class="_view data-v-27bd2556 text-center" style="padding: 15px;">总{{customerTotal}}名客户</view>
+    </i-panel>
+    <template data="{{...$root[$kk+'3'], $root}}" is="customer-list$46f98be8"></template>
+  </view>
+</template>

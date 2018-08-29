@@ -1,0 +1,40 @@
+<template name="rankingList$60b5c752">
+  <view class="_div data-v-5b82f63a page app">
+    <view class="_div data-v-5b82f63a rankFixd">
+      <view class="_div data-v-5b82f63a ranking-header clearfix p-a-2 center-y">
+        <label class="_span data-v-5b82f63a ranking-text fl">排行榜</label>
+        <view class="_div data-v-5b82f63a">
+          <image src="/static/assets/ranking/medal.png" alt class="_img data-v-5b82f63a ranking-img fr"></image>
+        </view>
+      </view>
+      <view class="_div data-v-5b82f63a"></view>
+      <i-tabs current="{{tabCurrent}}" bindchange="handleProxy" data-eventid="{{'0'}}" data-comkey="{{$k}}" class="_i-tabs data-v-5b82f63a">
+        <i-tab key="hot" title="人气" class="_i-tab data-v-5b82f63a"></i-tab>
+        <i-tab key="like" title="点赞" class="_i-tab data-v-5b82f63a"></i-tab>
+        <i-tab key="collection" title="收藏" class="_i-tab data-v-5b82f63a"></i-tab>
+      </i-tabs>
+    </view>
+    <view class="_div data-v-5b82f63a tabCont">
+      <i-panel wx:key="index" key="{{index}}" wx:for="{{5}}" wx:for-index="index" wx:for-item="items" class="_i-panel data-v-5b82f63a">
+        <view class="_div data-v-5b82f63a p-x-2 p-y-1 clearfix center-y">
+          <view class="_div data-v-5b82f63a tab-l fl text-center font-color-sub center-a">
+            <image wx:if="{{index === 0}}" src="/static/assets/ranking/no1.png" class="_image data-v-5b82f63a"></image>
+            <image wx:if="{{index === 1}}" src="/static/assets/ranking/no2.png" class="_image data-v-5b82f63a"></image>
+            <image wx:if="{{index === 2}}" src="/static/assets/ranking/no3.png" class="_image data-v-5b82f63a"></image>
+            <label wx:if="{{index > 2}}" class="_span data-v-5b82f63a"> {{index + 1}}</label>
+          </view>
+          <view class="_div data-v-5b82f63a tab-avatar fl center-x">
+            <i-avatar src="https://i.loli.net/2017/08/21/599a521472424.jpg" size="large" class="_i-avatar data-v-5b82f63a"></i-avatar>
+          </view>
+          <view class="_div data-v-5b82f63a tab-r fl p-l-1">
+            <view class="_div data-v-5b82f63a tab-desc-t flex">
+              <label class="_span data-v-5b82f63a tab-desc-name text-oh font">刘德华</label>
+              <label class="_span data-v-5b82f63a tab-desc-post text-oh p-l-1 text-right font-sub">打扫厕所</label>
+            </view>
+            <view class="_div data-v-5b82f63a tab-desc-b text-oh font-sub"> 打扫厕所 </view>
+          </view>
+        </view>
+      </i-panel>
+    </view>
+  </view>
+</template>

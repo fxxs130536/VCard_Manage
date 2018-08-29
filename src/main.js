@@ -3,7 +3,7 @@ import store from '@/store'
 import App from '@/App'
 import MpvueRouterPatch from 'mpvue-router-patch'
 import WXAPI from '@/utils/wxp.js'
-
+import '@/styles/index.less'
 Vue.config.productionTip = false
 Vue.use(MpvueRouterPatch)
 Vue.use(WXAPI)
@@ -18,7 +18,9 @@ export default {
   // 这个字段走 app.json
   config: {
     pages: [
-      'pages/radar/list'
+      // 'pages/radar/list'
+      'pages/customer/list'
+
     ], // Will be filled in webpack
     window: {
       backgroundTextStyle: 'light',

@@ -1,0 +1,29 @@
+@import "/static/css/vendor.wxss";
+
+.card-bg.data-v-6a859102 {
+  width: 100%;
+  height: 380rpx;
+  position: relative;
+  background-size: cover;
+}
+.me-header-cont.data-v-6a859102 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 380rpx;
+  background: rgba(0, 0, 0, 0.22);
+}
+.me-header.data-v-6a859102 {
+  color: #fff;
+}
+.me-title.data-v-6a859102 {
+  font-size: 32rpx;
+}
+.me-sub.data-v-6a859102 {
+  font-size: 24rpx;
+  line-height: 44rpx;
+}
+.ranking .center-a.data-v-6a859102 {
+  margin-top: 6rpx;
+}

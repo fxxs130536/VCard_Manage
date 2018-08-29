@@ -1,0 +1,65 @@
+<template name="list$b5a7366a">
+  <view class="_div data-v-5d82d770 page app">
+    <view class="_div data-v-5d82d770 me-header card-bg" style=" {{('background-image:' + ('url(' + background + ')') + ';')}}">
+      <view class="_div data-v-5d82d770 me-header-cont  p-y-2">
+        <view class="_div data-v-5d82d770">
+          <i-row i-class="p-x-2" class="_i-row data-v-5d82d770">
+            <i-col i-class span="{{4}}" class="_i-col data-v-5d82d770">
+              <i-avatar size="large" src="https://i.loli.net/2017/08/21/599a521472424.jpg" class="_i-avatar data-v-5d82d770"></i-avatar>
+            </i-col>
+            <i-col i-class="p-x-1" span="{{18}}" class="_i-col data-v-5d82d770">
+              <view class="_p data-v-5d82d770 me-title">董小姐</view>
+              <view class="_p data-v-5d82d770 me-sub">智慧美貌集一身</view>
+            </i-col>
+            <i-col i-class span="{{2}}" class="_i-col data-v-5d82d770">
+              <i-icon class="_i-icon data-v-5d82d770 p-a-1" type="editor" size="22" bindtap="handleProxy" data-eventid="{{'0'}}" data-comkey="{{$k}}"></i-icon>
+            </i-col>
+          </i-row>
+          <i-divider lineColor="#dddee1" class="_i-divider data-v-5d82d770"></i-divider>
+          <view class="_div data-v-5d82d770 me-b p-x-2">
+            <view class="_p data-v-5d82d770 me-title">广东印生活网络有限公司</view>
+            <view class="_p data-v-5d82d770 me-sub">电话：1353699106</view>
+            <view class="_p data-v-5d82d770 me-sub">邮箱：1353699106</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="_div data-v-5d82d770 me-header-b bgf m-b-2">
+      <i-row i-class="p-y-1 ranking" class="_i-row data-v-5d82d770">
+        <i-col i-class="text-center font-color" span="8" class="_i-col data-v-5d82d770">
+          <view class="_p data-v-5d82d770 text-oh">0</view>
+          <view class="_p data-v-5d82d770 center-a">
+            <i-icon type="flag_fill" color="#f5222d" size="22" class="_i-icon data-v-5d82d770"></i-icon>人气</view>
+        </i-col>
+        <i-col i-class="text-center font-color" span="8" class="_i-col data-v-5d82d770">
+          <view class="_p data-v-5d82d770 text-oh">0</view>
+          <view class="_p data-v-5d82d770 center-a ">
+            <i-icon type="praise_fill" color="#19be6b" size="22" class="_i-icon data-v-5d82d770"></i-icon>点赞</view>
+        </i-col>
+        <i-col i-class="text-center font-color" span="8" class="_i-col data-v-5d82d770">
+          <view class="_p data-v-5d82d770 text-oh">0</view>
+          <view class="_p data-v-5d82d770 center-a">
+            <i-icon type="collection_fill" color="#ff9900" size="22" class="_i-icon data-v-5d82d770"></i-icon>收藏</view>
+        </i-col>
+      </i-row>
+      <i-divider lineColor="#dddee1" height="4" class="_i-divider data-v-5d82d770"></i-divider>
+      <i-row i-class="p-x-2 " class="_i-row data-v-5d82d770">
+        <i-col i-class="font-color-sub p-y-2" span="3" class="_i-col data-v-5d82d770">简介</i-col>
+        <i-col i-class="font-color p-y-2" span="21" class="_i-col data-v-5d82d770">风流倜傥，年少多金,人见人爱风流倜傥，年少多金,人见人爱风流倜傥，年少多金,人见人爱风流倜傥，年少多金,人见人爱风流倜傥，年少多金,人见人爱风流倜傥，年少多金,人见人爱</i-col>
+      </i-row>
+    </view>
+    <view class="_div data-v-5d82d770 bgf">
+      <i-cell-group class="_i-cell-group data-v-5d82d770">
+        <i-cell title="排行榜" is-link url="/pages/person/rankingList" class="_i-cell data-v-5d82d770">
+          <i-icon slot="icon" type="barrage_fill" size="22" color="#2d8cf0" class="_i-icon data-v-5d82d770"></i-icon>
+        </i-cell>
+        <i-cell title="名片夹" is-link url="/pages/person/cardList" class="_i-cell data-v-5d82d770">
+          <i-icon slot="icon" type="businesscard_fill" size="22" color="#2d8cf0" class="_i-icon data-v-5d82d770"></i-icon>
+        </i-cell>
+      </i-cell-group>
+    </view>
+    <view class="_div data-v-5d82d770 submit-btn">
+      <i-button bindtap="handleProxy" type="primary" data-eventid="{{'1'}}" data-comkey="{{$k}}" class="_i-button data-v-5d82d770">递名片</i-button>
+    </view>
+  </view>
+</template>

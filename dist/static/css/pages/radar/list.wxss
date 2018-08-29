@@ -1,0 +1,147 @@
+@import "/static/css/vendor.wxss";
+
+.page {
+  background-color: #f1f0f5;
+  padding-bottom: 20rpx;
+}
+.tab1-content {
+  width: 680rpx;
+  height: 120rpx;
+  margin: 10rpx auto;
+  background-color: #fff;
+  overflow: hidden;
+  border: 2rpx solid #e9eaec;
+  border-radius: 8rpx;
+}
+.col-class {
+  overflow: hidden;
+  text-align: center;
+  justify-content: center;
+}
+.radar-img {
+  width: 100rpx;
+  height: 100rpx;
+  margin-top: 30rpx;
+}
+.radar-text {
+  flex: 1;
+  height: 100rpx;
+  padding: 10rpx;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.radar-title {
+  font-size: 30rpx;
+  vertical-align: middle;
+}
+.radar-icon {
+  height: 120rpx;
+  line-height: 120rpx;
+  margin-left: 30rpx;
+}
+.action-top {
+  height: 50rpx;
+  margin-top: 8rpx;
+}
+.top-cell {
+  height: 20rpx;
+  overflow: hidden;
+}
+.center {
+  width: 750rpx;
+  height: 450rpx;
+  background-color: #fff;
+  padding-top: 25rpx;
+  padding-bottom: 25rpx;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.bottom-icon {
+  color: 'red';
+}
+.caption-wrap {
+  margin-bottom: 60rpx;
+}
+.caption-title {
+  font-weight: bold;
+  padding: 40rpx 20rpx;
+}
+.collapse-item-title {
+  font-size: 24rpx;
+  color: #737373;
+  font-weight: bold;
+}
+.collapse-item-content {
+  font-size: 28rpx;
+  color: #444444;
+}
+.action-detail-center {
+  background: #fff;
+}
+.collapse-item-title {
+  height: 80rpx;
+  padding: 10rpx;
+  color: #737373;
+  font-size: 32rpx;
+}
+.card {
+  width: 350rpx;
+  height: 200rpx;
+  background-color: rgba(45, 185, 245, 0.3);
+  border-radius: 10rpx;
+  display: flex;
+  flex-direction: row;
+  margin-left: 17rpx;
+}
+.card-left {
+  padding-top: 50rpx;
+  padding-left: 10rpx;
+  width: 200rpx;
+}
+.card-left-title {
+  color: #5B5B5B;
+  font-size: 28rpx;
+  font-weight: 700;
+  margin-bottom: 10rpx;
+}
+.card-left-text {
+  color: #707070;
+  font-size: 28rpx;
+  font-weight: normal;
+}
+.card-right {
+  width: 150rpx;
+}
+.card-right-image {
+  width: 100rpx;
+  height: 100rpx;
+  margin-left: 25rpx;
+  margin-top: 50rpx;
+}
+.mesg-items.data-v-a329dc22 {
+  padding: 16rpx;
+  border-bottom: 2rpx solid #dddee1;
+}
+.mesg-items .mesg-img.data-v-a329dc22 {
+  width: 100%;
+  height: 120rpx;
+}
+.mesg-items .mesg-t.data-v-a329dc22 {
+  font-size: 28rpx;
+  color: #495060;
+  height: 120rpx;
+  line-height: 120rpx;
+}
+.mesg-items .icon-col.data-v-a329dc22 {
+  padding-top: 30rpx;
+  text-align: center;
+}
+.row-text.data-v-a329dc22 {
+  text-align: center;
+}
+.row-class.data-v-a329dc22 {
+  padding-top: 20rpx;
+}
