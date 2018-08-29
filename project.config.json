@@ -10,7 +10,11 @@
 	"miniprogramRoot": "./dist/",
 	"compileType": "miniprogram",
 	"appid": "wx9c20c7365b5c702f",
+<<<<<<< HEAD
 	"projectname": "Vcard-manage",
+=======
+	"projectname": "Vcard-man",
+>>>>>>> fcc38efc602384b41586debaf0ee26f592ece1ca
 	"condition": {
 		"search": {
 			"current": -1,
