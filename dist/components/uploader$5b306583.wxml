@@ -10,7 +10,7 @@
           </view>
           <view class="_div data-v-4f0bb00e weui-uploader__bd">
             <view class="_div data-v-4f0bb00e weui-uploader__files clearfix ">
-              <view class="_div data-v-4f0bb00e upimg-list" wx:key="file.path" key="{{file.path}}" wx:for="{{files}}" wx:for-index="index" wx:for-item="file">
+              <view class="_div data-v-4f0bb00e upimg-list" wx:key="file.imgUrl" key="{{file.imgUrl}}" wx:for="{{files}}" wx:for-index="index" wx:for-item="file">
                 <view bindtap="handleProxy" data-eventid="{{'0-'+index}}" data-comkey="{{$k}}" class="_div data-v-4f0bb00e {{['weui-uploader__file', [file.hasMask ? 'weui-uploader__file_status' : '']]}}">
                   <image class="_img data-v-4f0bb00e weui-uploader__img" mode="aspectFill" src="{{file.path}}"></image>
                   <view class="_div data-v-4f0bb00e weui-uploader__file-content" wx:if="{{file.hasMask}}">

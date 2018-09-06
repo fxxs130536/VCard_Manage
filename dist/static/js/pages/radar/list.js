@@ -1,17 +1,17 @@
-global.webpackJsonp([1],{
+global.webpackJsonp([7],{
 
-/***/ 133:
+/***/ 155:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_mpvue_loader_lib_selector_type_script_index_0_list_vue__ = __webpack_require__(135);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_mpvue_loader_lib_template_compiler_index_id_data_v_3f1fb520_hasScoped_false_transformToRequire_video_src_source_src_img_src_image_xlink_href_node_modules_mpvue_loader_lib_selector_type_template_index_0_list_vue__ = __webpack_require__(144);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_mpvue_loader_lib_selector_type_script_index_0_list_vue__ = __webpack_require__(157);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_mpvue_loader_lib_template_compiler_index_id_data_v_3f1fb520_hasScoped_false_transformToRequire_video_src_source_src_img_src_image_xlink_href_node_modules_mpvue_loader_lib_selector_type_template_index_0_list_vue__ = __webpack_require__(166);
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(134)
+  __webpack_require__(156)
 }
-var normalizeComponent = __webpack_require__(0)
+var normalizeComponent = __webpack_require__(14)
 /* script */
 
 /* template */
@@ -54,27 +54,28 @@ if (false) {(function () {
 
 /***/ }),
 
-/***/ 134:
+/***/ 156:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 135:
+/***/ 157:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_babel_runtime_helpers_asyncToGenerator__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_babel_runtime_helpers_asyncToGenerator__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_babel_runtime_helpers_asyncToGenerator___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_babel_runtime_helpers_asyncToGenerator__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_babel_runtime_helpers_extends__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_babel_runtime_helpers_extends__ = __webpack_require__(15);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_babel_runtime_helpers_extends___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_babel_runtime_helpers_extends__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_wx__ = __webpack_require__(33);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_vuex__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_card_item__ = __webpack_require__(136);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_man_detail_vue__ = __webpack_require__(140);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_wx__ = __webpack_require__(134);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_vuex__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_card_item__ = __webpack_require__(158);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_man_detail_vue__ = __webpack_require__(162);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__utils_api__ = __webpack_require__(13);
 
 
 
@@ -157,6 +158,7 @@ if (false) {(function () {
 //
 //
 //
+
 
 
 
@@ -167,7 +169,10 @@ if (false) {(function () {
   data: function data() {
     return {
       current: 'tab3',
-      radarList: new Array(33),
+      radarList: [],
+      formData: [{ 'Number': 0, 'TypeCode': 100, 'TypeName': '点赞名片' }, { 'Number': 1, 'TypeCode': 103, 'TypeName': '复制邮箱' }, { 'Number': 1, 'TypeCode': 104, 'TypeName': '复制微信' }, { 'Number': 4, 'TypeCode': 106, 'TypeName': '点击商城' }, { 'Number': 9, 'TypeCode': 108, 'TypeName': '公司动态' }, { 'Number': 4, 'TypeCode': 109, 'TypeName': '公司某动态' }, { 'Number': 1, 'TypeCode': 112, 'TypeName': '复制公司' }, { 'Number': 1, 'TypeCode': 113, 'TypeName': '查看官网' }, { 'Number': 1, 'TypeCode': 114, 'TypeName': '保存电话' }],
+      formGroup: [],
+      keyGroup: {},
       manDetailList: new Array(33)
     };
   },
@@ -176,9 +181,12 @@ if (false) {(function () {
     Card: __WEBPACK_IMPORTED_MODULE_5__components_card_item__["a" /* default */],
     manDetail: __WEBPACK_IMPORTED_MODULE_6__components_man_detail_vue__["a" /* default */]
   },
-  computed: __WEBPACK_IMPORTED_MODULE_2_babel_runtime_helpers_extends___default()({}, Object(__WEBPACK_IMPORTED_MODULE_4_vuex__["c" /* mapState */])(["topics"])),
+  computed: __WEBPACK_IMPORTED_MODULE_2_babel_runtime_helpers_extends___default()({}, Object(__WEBPACK_IMPORTED_MODULE_4_vuex__["c" /* mapState */])(['topics'])),
   mounted: function mounted() {
     this.refresh();
+    this.Get_OperationLogsTime();
+    this.Get_OperationLogsBehavior();
+    this.Get_OperationLogsPeople();
   },
   onPullDownRefresh: function onPullDownRefresh() {
     this.refresh();
@@ -187,7 +195,7 @@ if (false) {(function () {
     this.loadmore();
   },
 
-  methods: __WEBPACK_IMPORTED_MODULE_2_babel_runtime_helpers_extends___default()({}, Object(__WEBPACK_IMPORTED_MODULE_4_vuex__["b" /* mapActions */])(["getTopics"]), {
+  methods: __WEBPACK_IMPORTED_MODULE_2_babel_runtime_helpers_extends___default()({}, Object(__WEBPACK_IMPORTED_MODULE_4_vuex__["b" /* mapActions */])(['getTopics']), {
     refresh: function refresh() {
       var _this = this;
 
@@ -203,7 +211,7 @@ if (false) {(function () {
                 __WEBPACK_IMPORTED_MODULE_3_wx__["a" /* default */].stopPullDownRefresh();
 
               case 3:
-              case "end":
+              case 'end':
                 return _context.stop();
             }
           }
@@ -217,24 +225,141 @@ if (false) {(function () {
       var target = _ref.target;
 
       this.current = target.key;
+    },
+    Get_OperationLogsTime: function Get_OperationLogsTime() {
+      var _this2 = this;
+
+      return __WEBPACK_IMPORTED_MODULE_1_babel_runtime_helpers_asyncToGenerator___default()( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.mark(function _callee2() {
+        var par, res;
+        return __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                _context2.prev = 0;
+                par = {
+                  $OperatedUserId: 'OMGTM4RAY3NTNPFYWHLOBVEAJBNU'
+                };
+                _context2.next = 4;
+                return __WEBPACK_IMPORTED_MODULE_7__utils_api__["a" /* default */].Get_OperationLogsTime(par);
+
+              case 4:
+                res = _context2.sent;
+
+                _this2.radarList = res.dgData;
+                _context2.next = 11;
+                break;
+
+              case 8:
+                _context2.prev = 8;
+                _context2.t0 = _context2['catch'](0);
+
+                console.log(_context2.t0);
+
+              case 11:
+              case 'end':
+                return _context2.stop();
+            }
+          }
+        }, _callee2, _this2, [[0, 8]]);
+      }))();
+    },
+    Get_OperationLogsBehavior: function Get_OperationLogsBehavior() {
+      var _this3 = this;
+
+      return __WEBPACK_IMPORTED_MODULE_1_babel_runtime_helpers_asyncToGenerator___default()( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.mark(function _callee3() {
+        var par, res;
+        return __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.wrap(function _callee3$(_context3) {
+          while (1) {
+            switch (_context3.prev = _context3.next) {
+              case 0:
+                _context3.prev = 0;
+                par = {
+                  //   $Type: '100',
+                  //   $StartDate: '2018-09-03',
+                  $OperUserId: 'OMGTM4RAY3NTNPFYWHLOBVEAJBNU'
+                };
+                _context3.next = 4;
+                return __WEBPACK_IMPORTED_MODULE_7__utils_api__["a" /* default */].Get_OperationLogsBehavior(par);
+
+              case 4:
+                res = _context3.sent;
+
+                _this3.formData = res.dgData;
+                console.log(_this3.formData);
+                _context3.next = 11;
+                break;
+
+              case 9:
+                _context3.prev = 9;
+                _context3.t0 = _context3['catch'](0);
+
+              case 11:
+              case 'end':
+                return _context3.stop();
+            }
+          }
+        }, _callee3, _this3, [[0, 9]]);
+      }))();
+    },
+    Get_OperationLogsPeople: function Get_OperationLogsPeople() {
+      var _this4 = this;
+
+      return __WEBPACK_IMPORTED_MODULE_1_babel_runtime_helpers_asyncToGenerator___default()( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.mark(function _callee4() {
+        var par, res, key;
+        return __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.wrap(function _callee4$(_context4) {
+          while (1) {
+            switch (_context4.prev = _context4.next) {
+              case 0:
+                _context4.prev = 0;
+                par = {
+                  $UserId: '',
+                  $OperUserId: 'OMGTM4RAY3NTNPFYWHLOBVEAJBNU'
+                };
+                _context4.next = 4;
+                return __WEBPACK_IMPORTED_MODULE_7__utils_api__["a" /* default */].Get_OperationLogsPeople(par);
+
+              case 4:
+                res = _context4.sent;
+
+
+                for (key in res.dgData[0]) {
+                  if (key === 'strName' || key === 'CreateBy' || key === 'operName' || key === 'OperatedUserId' || key === 'strAvatarUrl') {} else {
+                    _this4.keyGroup[key] = key;
+                  }
+                }
+                _this4.formGroup = res.dgData;
+                _context4.next = 11;
+                break;
+
+              case 9:
+                _context4.prev = 9;
+                _context4.t0 = _context4['catch'](0);
+
+              case 11:
+              case 'end':
+                return _context4.stop();
+            }
+          }
+        }, _callee4, _this4, [[0, 9]]);
+      }))();
     }
   })
 });
 
 /***/ }),
 
-/***/ 136:
+/***/ 158:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_mpvue_loader_lib_selector_type_script_index_0_card_item_vue__ = __webpack_require__(138);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_mpvue_loader_lib_template_compiler_index_id_data_v_26f63296_hasScoped_false_transformToRequire_video_src_source_src_img_src_image_xlink_href_node_modules_mpvue_loader_lib_selector_type_template_index_0_card_item_vue__ = __webpack_require__(139);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_mpvue_loader_lib_selector_type_script_index_0_card_item_vue__ = __webpack_require__(160);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_mpvue_loader_lib_template_compiler_index_id_data_v_26f63296_hasScoped_false_transformToRequire_video_src_source_src_img_src_image_xlink_href_node_modules_mpvue_loader_lib_selector_type_template_index_0_card_item_vue__ = __webpack_require__(161);
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(137)
+  __webpack_require__(159)
 }
-var normalizeComponent = __webpack_require__(0)
+var normalizeComponent = __webpack_require__(14)
 /* script */
 
 /* template */
@@ -277,14 +402,14 @@ if (false) {(function () {
 
 /***/ }),
 
-/***/ 137:
+/***/ 159:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 138:
+/***/ 160:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -316,7 +441,7 @@ if (false) {(function () {
 
 /***/ }),
 
-/***/ 139:
+/***/ 161:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -357,18 +482,18 @@ if (false) {
 
 /***/ }),
 
-/***/ 140:
+/***/ 162:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_mpvue_loader_lib_selector_type_script_index_0_man_detail_vue__ = __webpack_require__(142);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_mpvue_loader_lib_template_compiler_index_id_data_v_a329dc22_hasScoped_true_transformToRequire_video_src_source_src_img_src_image_xlink_href_node_modules_mpvue_loader_lib_selector_type_template_index_0_man_detail_vue__ = __webpack_require__(143);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_mpvue_loader_lib_selector_type_script_index_0_man_detail_vue__ = __webpack_require__(164);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_mpvue_loader_lib_template_compiler_index_id_data_v_a329dc22_hasScoped_true_transformToRequire_video_src_source_src_img_src_image_xlink_href_node_modules_mpvue_loader_lib_selector_type_template_index_0_man_detail_vue__ = __webpack_require__(165);
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(141)
+  __webpack_require__(163)
 }
-var normalizeComponent = __webpack_require__(0)
+var normalizeComponent = __webpack_require__(14)
 /* script */
 
 /* template */
@@ -411,41 +536,17 @@ if (false) {(function () {
 
 /***/ }),
 
-/***/ 141:
+/***/ 163:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 142:
+/***/ 164:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -477,9 +578,23 @@ if (false) {(function () {
 
 /* harmony default export */ __webpack_exports__["a"] = ({
   props: {
-    list: '',
+    list: {},
+    keyGroup: {},
     openItem: true
   },
+  data: function data() {
+    return {
+      num: 0
+    };
+  },
+  mounted: function mounted() {
+    for (var key in this.keyGroup) {
+      if (key === 'strName' || key === 'CreateBy' || key === 'operName' || key === 'OperatedUserId' || key === 'strAvatarUrl') {} else {
+        this.num += this.list[key];
+      }
+    }
+  },
+
   methods: {
     open: function open() {
       this.openItem = !this.openItem;
@@ -489,7 +604,7 @@ if (false) {(function () {
 
 /***/ }),
 
-/***/ 143:
+/***/ 165:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -517,7 +632,7 @@ var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._sel
   }, [_c('img', {
     staticClass: "mesg-img fl",
     attrs: {
-      "src": "https://i.loli.net/2017/08/21/599a521472424.jpg",
+      "src": _vm.list.strAvatarUrl,
       "alt": ""
     }
   })]), _vm._v(" "), _c('i-col', {
@@ -529,7 +644,7 @@ var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._sel
     }
   }, [_c('p', {
     staticClass: "mesg-t text-oh font-color-title"
-  }, [_vm._v("高档名片在你的名片上互动了22次")])], 1), _vm._v(" "), _c('i-col', {
+  }, [_vm._v(_vm._s(_vm.list.strName) + "在你的名片上互动了" + _vm._s(_vm.num) + "次")])], 1), _vm._v(" "), _c('i-col', {
     attrs: {
       "span": "4",
       "i-class": "col-class",
@@ -551,122 +666,33 @@ var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._sel
       "size": "28",
       "mpcomid": '3'
     }
-  }) : _vm._e()], 1)])], 1), _vm._v(" "), (_vm.openItem) ? _c('div', [_c('i-row', {
-    attrs: {
-      "i-class": "row-class",
-      "mpcomid": '9'
-    }
-  }, [_c('i-col', {
-    attrs: {
-      "span": "5",
-      "i-class": "row-text",
-      "mpcomid": '6'
-    }
-  }, [_vm._v("查看名片")]), _vm._v(" "), _c('i-col', {
-    attrs: {
-      "span": "19",
-      "i-class": "",
-      "mpcomid": '8'
-    }
-  }, [_c('i-progress', {
-    attrs: {
-      "percent": "15",
-      "status": "active",
-      "mpcomid": '7'
-    }
-  })], 1)], 1), _vm._v(" "), _c('i-row', {
-    attrs: {
-      "i-class": "row-class",
-      "mpcomid": '13'
-    }
-  }, [_c('i-col', {
-    attrs: {
-      "span": "5",
-      "i-class": "row-text",
-      "mpcomid": '10'
-    }
-  }, [_vm._v("呼叫手机")]), _vm._v(" "), _c('i-col', {
-    attrs: {
-      "span": "19",
-      "i-class": "",
-      "mpcomid": '12'
-    }
-  }, [_c('i-progress', {
-    attrs: {
-      "percent": "35",
-      "status": "success",
-      "mpcomid": '11'
-    }
-  })], 1)], 1), _vm._v(" "), _c('i-row', {
-    attrs: {
-      "i-class": "row-class",
-      "mpcomid": '17'
-    }
-  }, [_c('i-col', {
-    attrs: {
-      "span": "5",
-      "i-class": "row-text",
-      "mpcomid": '14'
-    }
-  }, [_vm._v("复制微信")]), _vm._v(" "), _c('i-col', {
-    attrs: {
-      "span": "19",
-      "i-class": "",
-      "mpcomid": '16'
-    }
-  }, [_c('i-progress', {
-    attrs: {
-      "percent": "45",
-      "status": "active",
-      "mpcomid": '15'
-    }
-  })], 1)], 1), _vm._v(" "), _c('i-row', {
-    attrs: {
-      "i-class": "row-class",
-      "mpcomid": '21'
-    }
-  }, [_c('i-col', {
-    attrs: {
-      "span": "5",
-      "i-class": "row-text",
-      "mpcomid": '18'
-    }
-  }, [_vm._v("查看商品")]), _vm._v(" "), _c('i-col', {
-    attrs: {
-      "span": "19",
-      "i-class": "",
-      "mpcomid": '20'
-    }
-  }, [_c('i-progress', {
-    attrs: {
-      "percent": "15",
-      "status": "wrong",
-      "mpcomid": '19'
-    }
-  })], 1)], 1), _vm._v(" "), _c('i-row', {
-    attrs: {
-      "i-class": "row-class",
-      "mpcomid": '25'
-    }
-  }, [_c('i-col', {
-    attrs: {
-      "span": "5",
-      "i-class": "row-text",
-      "mpcomid": '22'
-    }
-  }, [_vm._v("查看官网")]), _vm._v(" "), _c('i-col', {
-    attrs: {
-      "span": "19",
-      "i-class": "",
-      "mpcomid": '24'
-    }
-  }, [_c('i-progress', {
-    attrs: {
-      "percent": "99",
-      "status": "success",
-      "mpcomid": '23'
-    }
-  })], 1)], 1)], 1) : _vm._e()], 1)])
+  }) : _vm._e()], 1)])], 1), _vm._v(" "), (_vm.openItem) ? _c('div', _vm._l((_vm.keyGroup), function(item, index) {
+    return (_vm.list[item]) ? _c('i-row', {
+      key: index,
+      attrs: {
+        "i-class": "row-class",
+        "mpcomid": '9-' + index
+      }
+    }, [_c('i-col', {
+      attrs: {
+        "span": "5",
+        "i-class": "row-text",
+        "mpcomid": '6-' + index
+      }
+    }, [_vm._v(_vm._s(item))]), _vm._v(" "), _c('i-col', {
+      attrs: {
+        "span": "19",
+        "i-class": "",
+        "mpcomid": '8-' + index
+      }
+    }, [_c('i-progress', {
+      attrs: {
+        "percent": _vm.list[item],
+        "status": "active",
+        "mpcomid": '7-' + index
+      }
+    })], 1)], 1) : _vm._e()
+  })) : _vm._e()], 1)])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -681,7 +707,7 @@ if (false) {
 
 /***/ }),
 
-/***/ 144:
+/***/ 166:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -735,7 +761,7 @@ var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._sel
     }, [_c('i-avatar', {
       attrs: {
         "i-class": "radar-img",
-        "src": "https://i.loli.net/2017/08/21/599a521472424.jpg",
+        "src": item.strAvatarUrl,
         "size": "default",
         "shape": "square",
         "mpcomid": '5-' + index
@@ -750,7 +776,7 @@ var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._sel
       staticClass: "radar-text"
     }, [_c('p', {
       staticClass: "radar-title"
-    }, [_vm._v("用户查看了你的名片")])], 1)]), _vm._v(" "), _c('i-col', {
+    }, [_vm._v(_vm._s(item.Details))])], 1)]), _vm._v(" "), _c('i-col', {
       attrs: {
         "span": "4",
         "i-class": "col-class",
@@ -791,29 +817,29 @@ var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._sel
     staticClass: "center"
   }, [_c('Card', {
     attrs: {
-      "title": "名片转发",
-      "text": "1次",
+      "title": _vm.formData[0].TypeName,
+      "text": _vm.formData[0].Number + "次",
       "image": "http://yj.kiy.cn/Content/Images/App/assets/icon/充值流量.png",
       "mpcomid": '14'
     }
   }), _vm._v(" "), _c('Card', {
     attrs: {
-      "title": "名片点赞",
-      "text": "1次",
+      "title": _vm.formData[1].TypeName,
+      "text": _vm.formData[1].Number + "次",
       "image": "http://yj.kiy.cn/Content/Images/App/assets/icon/字体样式.png",
       "mpcomid": '15'
     }
   }), _vm._v(" "), _c('Card', {
     attrs: {
-      "title": "转发名片",
-      "text": "2次",
+      "title": _vm.formData[2].TypeName,
+      "text": _vm.formData[2].Number + "次",
       "image": "http://yj.kiy.cn/Content/Images/App/assets/icon/文件.png",
       "mpcomid": '16'
     }
   }), _vm._v(" "), _c('Card', {
     attrs: {
-      "title": "呼叫座机",
-      "text": "3次",
+      "title": _vm.formData[3].TypeName,
+      "text": _vm.formData[3].Number + "次",
       "image": "http://yj.kiy.cn/Content/Images/App/assets/icon/统计.png",
       "mpcomid": '17'
     }
@@ -821,13 +847,13 @@ var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._sel
     staticClass: "bottom"
   }, [_c('i-cell-group', {
     attrs: {
-      "mpcomid": '30'
+      "mpcomid": '28'
     }
   }, [_c('i-cell', {
     attrs: {
       "i-class": "bottom-list",
-      "title": "呼叫手机",
-      "value": "1次",
+      "title": _vm.formData[4].TypeName,
+      "value": _vm.formData[4].Number + '次',
       "mpcomid": '19'
     }
   }, [_c('i-icon', {
@@ -840,8 +866,8 @@ var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._sel
   })], 1), _vm._v(" "), _c('i-cell', {
     attrs: {
       "i-class": "bottom-list",
-      "title": "复制邮箱",
-      "value": "1次",
+      "title": _vm.formData[5].TypeName,
+      "value": _vm.formData[5].Number + '次',
       "mpcomid": '21'
     }
   }, [_c('i-icon', {
@@ -854,8 +880,8 @@ var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._sel
   })], 1), _vm._v(" "), _c('i-cell', {
     attrs: {
       "i-class": "bottom-list",
-      "title": "复制微信",
-      "value": "1次",
+      "title": _vm.formData[6].TypeName,
+      "value": _vm.formData[6].Number + '次',
       "mpcomid": '23'
     }
   }, [_c('i-icon', {
@@ -868,8 +894,8 @@ var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._sel
   })], 1), _vm._v(" "), _c('i-cell', {
     attrs: {
       "i-class": "bottom-list",
-      "title": "保持信息",
-      "value": "1次",
+      "title": _vm.formData[7].TypeName,
+      "value": _vm.formData[7].Number + '次',
       "mpcomid": '25'
     }
   }, [_c('i-icon', {
@@ -882,8 +908,8 @@ var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._sel
   })], 1), _vm._v(" "), _c('i-cell', {
     attrs: {
       "i-class": "bottom-list",
-      "title": "查看朋友圈",
-      "value": "1次",
+      "title": _vm.formData[8].TypeName,
+      "value": _vm.formData[8].Number + '次',
       "mpcomid": '27'
     }
   }, [_c('i-icon', {
@@ -893,32 +919,18 @@ var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._sel
       "mpcomid": '26'
     },
     slot: "icon"
-  })], 1), _vm._v(" "), _c('i-cell', {
-    attrs: {
-      "i-class": "bottom-list",
-      "title": "查看商品",
-      "value": "1次",
-      "mpcomid": '29'
-    }
-  }, [_c('i-icon', {
-    attrs: {
-      "type": "shop_fill",
-      "color": "#EEEE00",
-      "mpcomid": '28'
-    },
-    slot: "icon"
   })], 1)], 1)], 1)], 1) : _vm._e(), _vm._v(" "), (_vm.current == 'tab3') ? _c('div', {
     staticClass: "action-detail"
   }, [_c('i-cell-group', {
     attrs: {
       "i-class": "action-top",
-      "mpcomid": '33'
+      "mpcomid": '31'
     }
   }, [_c('i-cell', {
     attrs: {
       "title": "仅七天被查看的行为统计",
       "i-class": "top-cell",
-      "mpcomid": '32'
+      "mpcomid": '30'
     }
   }, [_c('i-icon', {
     staticClass: "radar-icon",
@@ -926,18 +938,19 @@ var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._sel
       "type": "createtask",
       "size": "28",
       "color": "#2d8cf0",
-      "mpcomid": '31'
+      "mpcomid": '29'
     },
     slot: "footer"
   })], 1)], 1), _vm._v(" "), _c('div', {
     staticClass: "action-detail-center"
-  }, _vm._l((_vm.manDetailList), function(item, index) {
+  }, _vm._l((_vm.formGroup), function(item, index) {
     return _c('div', {
       key: index
     }, [_c('manDetail', {
       attrs: {
         "list": item,
-        "mpcomid": '34-' + index
+        "keyGroup": _vm.keyGroup,
+        "mpcomid": '32-' + index
       }
     })], 1)
   }))], 1) : _vm._e()], 1)
@@ -955,5 +968,5 @@ if (false) {
 
 /***/ })
 
-},[150]);
+},[124]);
 //# sourceMappingURL=list.js.map

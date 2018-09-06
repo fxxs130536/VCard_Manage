@@ -3,10 +3,10 @@
         <div class="mesg-items" @click="open">
             <i-row>
                 <i-col span="5" i-class="col-class mesg-img">
-                    <img class="mesg-img fl" src="https://i.loli.net/2017/08/21/599a521472424.jpg" alt="">               
+                    <img class="mesg-img fl" :src="list.strAvatarUrl" alt="">               
                 </i-col>
                 <i-col offset="1" span="14" i-class="col-class">
-                        <p class="mesg-t text-oh font-color-title">高档名片在你的名片上互动了22次</p>
+                        <p class="mesg-t text-oh font-color-title">{{list.strName}}在你的名片上互动了{{num}}次</p>
                 </i-col>
                 <i-col span="4" i-class="col-class">
                     <div class="icon-col">
@@ -16,34 +16,10 @@
                 </i-col>
             </i-row>
             <div v-if="openItem">
-                <i-row i-class="row-class">
-                    <i-col span="5" i-class="row-text">查看名片</i-col>
+                <i-row i-class="row-class" v-for="(item , index) in keyGroup" :key="index" v-if="list[item]">
+                    <i-col span="5" i-class="row-text">{{item}}</i-col>
                     <i-col span="19" i-class="">
-                        <i-progress percent="15" status="active"></i-progress>
-                    </i-col>
-                </i-row>
-                <i-row i-class="row-class">
-                    <i-col span="5" i-class="row-text">呼叫手机</i-col>
-                    <i-col span="19" i-class="">
-                        <i-progress percent="35" status="success"></i-progress>
-                    </i-col>
-                </i-row>
-                <i-row i-class="row-class">
-                    <i-col span="5" i-class="row-text">复制微信</i-col>
-                    <i-col span="19" i-class="">
-                        <i-progress percent="45" status="active"></i-progress>
-                    </i-col>
-                </i-row>
-                <i-row i-class="row-class">
-                    <i-col span="5" i-class="row-text">查看商品</i-col>
-                    <i-col span="19" i-class="">
-                        <i-progress percent="15" status="wrong"></i-progress>
-                    </i-col>
-                </i-row>
-                <i-row i-class="row-class">
-                    <i-col span="5" i-class="row-text">查看官网</i-col>
-                    <i-col span="19" i-class="">
-                        <i-progress percent="99" status="success"></i-progress>
+                        <i-progress :percent="list[item]" status="active"></i-progress>
                     </i-col>
                 </i-row>
             </div>
@@ -53,12 +29,28 @@
 <script>
 export default {
   props: {
-    list: '',
+    list: {
+
+    },
+    keyGroup: {},
     openItem: true
   },
+  data () {
+    return {
+      num: 0
+    }
+  },
+  mounted () {
+    for (const key in this.keyGroup) {
+      if (key === 'strName' || key === 'CreateBy' || key === 'operName' || key === 'OperatedUserId' || key === 'strAvatarUrl') {
+      } else {
+        this.num += this.list[key]
+      }
+    }
+  },
   methods: {
-    open() {
-        this.openItem = !this.openItem
+    open () {
+      this.openItem = !this.openItem
     }
   }
 }

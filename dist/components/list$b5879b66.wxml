@@ -12,11 +12,11 @@
     <view wx:if="{{current=='tab1'}}" class="_div data-v-3f1fb520">
       <i-row i-class="tab1-content" wx:key="index" key="{{index}}" wx:for="{{radarList}}" wx:for-index="index" wx:for-item="item" class="_i-row data-v-3f1fb520">
         <i-col span="4" i-class="col-class" class="_i-col data-v-3f1fb520">
-          <i-avatar i-class="radar-img" src="https://i.loli.net/2017/08/21/599a521472424.jpg" size="default" shape="square" class="_i-avatar data-v-3f1fb520"></i-avatar>
+          <i-avatar i-class="radar-img" src="{{item.strAvatarUrl}}" size="default" shape="square" class="_i-avatar data-v-3f1fb520"></i-avatar>
         </i-col>
         <i-col span="16" i-class="col-class" class="_i-col data-v-3f1fb520">
           <view class="_div data-v-3f1fb520 radar-text">
-            <view class="_p data-v-3f1fb520 radar-title">用户查看了你的名片</view>
+            <view class="_p data-v-3f1fb520 radar-title">{{item.Details}}</view>
           </view>
         </i-col>
         <i-col span="4" i-class="col-class" class="_i-col data-v-3f1fb520">
@@ -31,30 +31,27 @@
         </i-cell>
       </i-cell-group>
       <view class="_div data-v-3f1fb520 center">
-        <template title="名片转发" text="1次" image="http://yj.kiy.cn/Content/Images/App/assets/icon/充值流量.png" data="{{...$root[$kk+'14'], $root}}" is="card-item$7ed34b2a"></template>
-        <template title="名片点赞" text="1次" image="http://yj.kiy.cn/Content/Images/App/assets/icon/字体样式.png" data="{{...$root[$kk+'15'], $root}}" is="card-item$7ed34b2a"></template>
-        <template title="转发名片" text="2次" image="http://yj.kiy.cn/Content/Images/App/assets/icon/文件.png" data="{{...$root[$kk+'16'], $root}}" is="card-item$7ed34b2a"></template>
-        <template title="呼叫座机" text="3次" image="http://yj.kiy.cn/Content/Images/App/assets/icon/统计.png" data="{{...$root[$kk+'17'], $root}}" is="card-item$7ed34b2a"></template>
+        <template image="http://yj.kiy.cn/Content/Images/App/assets/icon/充值流量.png" data="{{...$root[$kk+'14'], $root}}" is="card-item$7ed34b2a"></template>
+        <template image="http://yj.kiy.cn/Content/Images/App/assets/icon/字体样式.png" data="{{...$root[$kk+'15'], $root}}" is="card-item$7ed34b2a"></template>
+        <template image="http://yj.kiy.cn/Content/Images/App/assets/icon/文件.png" data="{{...$root[$kk+'16'], $root}}" is="card-item$7ed34b2a"></template>
+        <template image="http://yj.kiy.cn/Content/Images/App/assets/icon/统计.png" data="{{...$root[$kk+'17'], $root}}" is="card-item$7ed34b2a"></template>
       </view>
       <view class="_div data-v-3f1fb520 bottom">
         <i-cell-group class="_i-cell-group data-v-3f1fb520">
-          <i-cell i-class="bottom-list" title="呼叫手机" value="1次" class="_i-cell data-v-3f1fb520">
+          <i-cell i-class="bottom-list" title="{{formData[4].TypeName}}" value="{{formData[4].Number + '次'}}" class="_i-cell data-v-3f1fb520">
             <i-icon type="like_fill" slot="icon" color="#FFC125" class="_i-icon data-v-3f1fb520"></i-icon>
           </i-cell>
-          <i-cell i-class="bottom-list" title="复制邮箱" value="1次" class="_i-cell data-v-3f1fb520">
+          <i-cell i-class="bottom-list" title="{{formData[5].TypeName}}" value="{{formData[5].Number + '次'}}" class="_i-cell data-v-3f1fb520">
             <i-icon type="share_fill" slot="icon" color="#EE30A7" class="_i-icon data-v-3f1fb520"></i-icon>
           </i-cell>
-          <i-cell i-class="bottom-list" title="复制微信" value="1次" class="_i-cell data-v-3f1fb520">
+          <i-cell i-class="bottom-list" title="{{formData[6].TypeName}}" value="{{formData[6].Number + '次'}}" class="_i-cell data-v-3f1fb520">
             <i-icon type="mobilephone" slot="icon" color="#B23AEE" class="_i-icon data-v-3f1fb520"></i-icon>
           </i-cell>
-          <i-cell i-class="bottom-list" title="保持信息" value="1次" class="_i-cell data-v-3f1fb520">
+          <i-cell i-class="bottom-list" title="{{formData[7].TypeName}}" value="{{formData[7].Number + '次'}}" class="_i-cell data-v-3f1fb520">
             <i-icon type="send" slot="icon" color="#7FFF00" class="_i-icon data-v-3f1fb520"></i-icon>
           </i-cell>
-          <i-cell i-class="bottom-list" title="查看朋友圈" value="1次" class="_i-cell data-v-3f1fb520">
+          <i-cell i-class="bottom-list" title="{{formData[8].TypeName}}" value="{{formData[8].Number + '次'}}" class="_i-cell data-v-3f1fb520">
             <i-icon type="shop_fill" slot="icon" color="#C5C1AA" class="_i-icon data-v-3f1fb520"></i-icon>
-          </i-cell>
-          <i-cell i-class="bottom-list" title="查看商品" value="1次" class="_i-cell data-v-3f1fb520">
-            <i-icon type="shop_fill" slot="icon" color="#EEEE00" class="_i-icon data-v-3f1fb520"></i-icon>
           </i-cell>
         </i-cell-group>
       </view>
@@ -66,8 +63,8 @@
         </i-cell>
       </i-cell-group>
       <view class="_div data-v-3f1fb520 action-detail-center">
-        <view wx:key="index" key="{{index}}" wx:for="{{manDetailList}}" wx:for-index="index" wx:for-item="item" class="_div data-v-3f1fb520">
-          <template data="{{...$root[$kk+'34-'+index], $root}}" is="man-detail$5c8814f9"></template>
+        <view wx:key="index" key="{{index}}" wx:for="{{formGroup}}" wx:for-index="index" wx:for-item="item" class="_div data-v-3f1fb520">
+          <template data="{{...$root[$kk+'32-'+index], $root}}" is="man-detail$5c8814f9"></template>
         </view>
       </view>
     </view>

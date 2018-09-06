@@ -1,0 +1,7 @@
+<template name="qrcode$302ee86c">
+  <view class="_div data-v-3eaeb7a2 page app">
+    <view class="_div data-v-3eaeb7a2 center-a">
+      <image src="{{qrImg}}" alt style="width:306px;height:306px;" class="_img data-v-3eaeb7a2"></image>
+    </view>
+  </view>
+</template>

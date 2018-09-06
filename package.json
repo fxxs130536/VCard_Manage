@@ -2,7 +2,7 @@
   "name": "Vcard-manage",
   "version": "0.1.0",
   "description": "Vcard管理端",
-  "author": "F-loat <chaimaoyuan@foxmail.com>",
+  "author": "<lllidan120@163.com> and <17612043993@163.com>",
   "private": true,
   "scripts": {
     "dev": "node build/dev-server.js",

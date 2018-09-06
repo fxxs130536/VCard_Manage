@@ -20,7 +20,7 @@
             <div class="weui-uploader__files clearfix ">
               <div class="upimg-list"
                 v-for="(file,index) in files"
-                :key="file.path"
+                :key="file.imgUrl"
               >
                 <div
                   :class="['weui-uploader__file', {'weui-uploader__file_status': file.hasMask}]"

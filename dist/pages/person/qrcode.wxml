@@ -1,0 +1,1 @@
+<import src="../../components/qrcode$302ee86c" /><template is="qrcode$302ee86c" data="{{ ...$root['0'], $root }}"/>

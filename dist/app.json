@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/person/list",
+    "pages/person/qrcode",
     "pages/person/rankingList",
     "pages/person/editCard",
     "pages/message/list",

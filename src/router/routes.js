@@ -57,6 +57,23 @@ module.exports = [
     }
   },
   {
+    path: '/pages/person/qrcode',
+    name: 'personQrcode',
+    config: {
+      navigationBarTitleText: '公司二维码',
+      usingComponents: {
+        // 'i-button': iview('button'),
+        // 'i-icon': iview('icon'),
+        // 'i-row': iview('row'),
+        // 'i-col': iview('col'),
+        // 'i-avatar': iview('avatar'),
+        // 'i-divider': iview('divider'),
+        // 'i-cell-group': iview('cell-group'),
+        // 'i-cell': iview('cell')
+      }
+    }
+  },
+  {
     path: '/pages/person/rankingList',
     name: 'personRankingList',
     config: {

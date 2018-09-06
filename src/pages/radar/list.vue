@@ -10,13 +10,13 @@
         <div v-if="current=='tab1'">
             <i-row i-class="tab1-content" v-for="(item , index) of radarList" :key="index">
                 <i-col span="4" i-class="col-class">
-                    <i-avatar i-class="radar-img" src="https://i.loli.net/2017/08/21/599a521472424.jpg" size="default" shape="square">
+                    <i-avatar i-class="radar-img" :src="item.strAvatarUrl" size="default" shape="square">
 
                     </i-avatar>
                 </i-col>
                 <i-col span="16" i-class="col-class">
                     <div class="radar-text">
-                        <p class="radar-title">用户查看了你的名片</p>
+                        <p class="radar-title">{{item.Details}}</p>
                     </div>
                 </i-col>
                 <i-col span="4" i-class="col-class">
@@ -30,32 +30,32 @@
                     <i-icon class="radar-icon" type="createtask" size="28" color="#2d8cf0" slot="footer"></i-icon>
                 </i-cell>
             </i-cell-group>
-            <div class="center">
-                <Card title="名片转发" text='1次' image="http://yj.kiy.cn/Content/Images/App/assets/icon/充值流量.png"></Card>
-                <Card title="名片点赞" text='1次' image="http://yj.kiy.cn/Content/Images/App/assets/icon/字体样式.png"></Card>
-                <Card title="转发名片" text='2次' image="http://yj.kiy.cn/Content/Images/App/assets/icon/文件.png"></Card>
-                <Card title="呼叫座机" text='3次' image="http://yj.kiy.cn/Content/Images/App/assets/icon/统计.png"></Card>
+            <div class="center" >
+                <Card :title="formData[0].TypeName" :text='formData[0].Number + "次"' image="http://yj.kiy.cn/Content/Images/App/assets/icon/充值流量.png"></Card>
+                <Card :title="formData[1].TypeName" :text='formData[1].Number + "次"' image="http://yj.kiy.cn/Content/Images/App/assets/icon/字体样式.png"></Card>
+                <Card :title="formData[2].TypeName" :text='formData[2].Number + "次"' image="http://yj.kiy.cn/Content/Images/App/assets/icon/文件.png"></Card>
+                <Card :title="formData[3].TypeName" :text='formData[3].Number + "次"' image="http://yj.kiy.cn/Content/Images/App/assets/icon/统计.png"></Card>
             </div>
             <div class="bottom">
                 <i-cell-group>
-                    <i-cell i-class="bottom-list" title="呼叫手机" value="1次">
+                    <i-cell i-class="bottom-list" :title="formData[4].TypeName" :value="formData[4].Number + '次'"  >
                         <i-icon type="like_fill" slot="icon" color="#FFC125"></i-icon>
                     </i-cell>
-                    <i-cell i-class="bottom-list" title="复制邮箱" value="1次">
+                    <i-cell i-class="bottom-list" :title="formData[5].TypeName" :value="formData[5].Number + '次'" >
                         <i-icon type="share_fill" slot="icon" color="#EE30A7"></i-icon>
                     </i-cell>
-                    <i-cell i-class="bottom-list" title="复制微信" value="1次">
+                    <i-cell i-class="bottom-list" :title="formData[6].TypeName" :value="formData[6].Number + '次'" >
                         <i-icon type="mobilephone" slot="icon" color="#B23AEE"></i-icon>
                     </i-cell>
-                    <i-cell i-class="bottom-list" title="保持信息" value="1次">
+                    <i-cell i-class="bottom-list" :title="formData[7].TypeName" :value="formData[7].Number + '次'" >
                         <i-icon type="send" slot="icon" color="#7FFF00"></i-icon>
                     </i-cell>
-                    <i-cell i-class="bottom-list" title="查看朋友圈" value="1次">
+                    <i-cell i-class="bottom-list" :title="formData[8].TypeName" :value="formData[8].Number + '次'" >
                         <i-icon type="shop_fill" slot="icon" color="#C5C1AA"></i-icon>
                     </i-cell>
-                    <i-cell i-class="bottom-list" title="查看商品" value="1次">
+                    <!-- <i-cell i-class="bottom-list" title="查看商品" value="1次">
                         <i-icon type="shop_fill" slot="icon" color="#EEEE00"></i-icon>
-                    </i-cell>
+                    </i-cell> -->
                 </i-cell-group>
             </div>
         </div>
@@ -66,8 +66,8 @@
                 </i-cell>
             </i-cell-group>
             <div class="action-detail-center">
-                <div v-for="(item , index) in manDetailList" :key="index">
-                    <manDetail :list="item"></manDetail>
+                <div v-for="(item , index) in formGroup" :key="index">
+                    <manDetail :list="item" :keyGroup="keyGroup"></manDetail>
                 </div>
                 
             </div>
@@ -78,49 +78,100 @@
 </template>
 
 <script>
-import wx from "wx";
-import { mapState, mapActions } from "vuex";
-import Card from '@/components/card-item';
+import wx from 'wx'
+import { mapState, mapActions } from 'vuex'
+import Card from '@/components/card-item'
 import manDetail from '@/components/man-detail.vue'
+import api from '@/utils/api'
 
 export default {
   data () {
-      return {
-          current: 'tab3',
-          radarList: new Array(33),
-          manDetailList: new Array(33)
-      }
+    return {
+      current: 'tab3',
+      radarList: [],
+      formData: [{'Number': 0, 'TypeCode': 100, 'TypeName': '点赞名片'}, {'Number': 1, 'TypeCode': 103, 'TypeName': '复制邮箱'}, {'Number': 1, 'TypeCode': 104, 'TypeName': '复制微信'}, {'Number': 4, 'TypeCode': 106, 'TypeName': '点击商城'}, {'Number': 9, 'TypeCode': 108, 'TypeName': '公司动态'}, {'Number': 4, 'TypeCode': 109, 'TypeName': '公司某动态'}, {'Number': 1, 'TypeCode': 112, 'TypeName': '复制公司'}, {'Number': 1, 'TypeCode': 113, 'TypeName': '查看官网'}, {'Number': 1, 'TypeCode': 114, 'TypeName': '保存电话'}],
+      formGroup: [],
+      keyGroup: {},
+      manDetailList: new Array(33)
+    }
   },
   components: {
-      Card,
-      manDetail
+    Card,
+    manDetail
   },
   computed: {
-    ...mapState(["topics"])
+    ...mapState(['topics'])
   },
-  mounted() {
-    this.refresh();
+  mounted () {
+    this.refresh()
+    this.Get_OperationLogsTime()
+    this.Get_OperationLogsBehavior()
+    this.Get_OperationLogsPeople()
   },
-  onPullDownRefresh() {
-    this.refresh();
+  onPullDownRefresh () {
+    this.refresh()
   },
-  onReachBottom() {
-    this.loadmore();
+  onReachBottom () {
+    this.loadmore()
   },
   methods: {
-    ...mapActions(["getTopics"]),
-    async refresh() {
-      await this.getTopics(true);
-      wx.stopPullDownRefresh();
+    ...mapActions(['getTopics']),
+    async refresh () {
+      await this.getTopics(true)
+      wx.stopPullDownRefresh()
     },
-    loadmore() {
+    loadmore () {
       this.radarList.push(undefined)
     },
-    handleChange({target}) {
-        this.current = target.key
+    handleChange ({target}) {
+      this.current = target.key
+    },
+    async Get_OperationLogsTime () {
+      try {
+        var par = {
+          $OperatedUserId: 'OMGTM4RAY3NTNPFYWHLOBVEAJBNU'
+        }
+        const res = await api.Get_OperationLogsTime(par)
+        this.radarList = res.dgData
+      } catch (error) {
+        console.log(error)
+      }
+    },
+    async Get_OperationLogsBehavior () {
+      try {
+        var par = {
+        //   $Type: '100',
+          //   $StartDate: '2018-09-03',
+          $OperUserId: 'OMGTM4RAY3NTNPFYWHLOBVEAJBNU'
+        }
+        const res = await api.Get_OperationLogsBehavior(par)
+        this.formData = res.dgData
+        console.log(this.formData)
+      } catch (err) {
+
+      }
+    },
+    async Get_OperationLogsPeople () {
+      try {
+        var par = {
+          $UserId: '',
+          $OperUserId: 'OMGTM4RAY3NTNPFYWHLOBVEAJBNU'
+        }
+        const res = await api.Get_OperationLogsPeople(par)
+
+        for (const key in res.dgData[0]) {
+          if (key === 'strName' || key === 'CreateBy' || key === 'operName' || key === 'OperatedUserId' || key === 'strAvatarUrl') {
+          } else {
+            this.keyGroup[key] = key
+          }
+        }
+        this.formGroup = res.dgData
+      } catch (err) {
+
+      }
     }
   }
-};
+}
 </script>
 
 <style lang="less">

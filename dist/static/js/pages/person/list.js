@@ -1,17 +1,17 @@
-global.webpackJsonp([6],{
+global.webpackJsonp([3],{
 
-/***/ 100:
+/***/ 102:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_mpvue_loader_lib_selector_type_script_index_0_list_vue__ = __webpack_require__(102);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_mpvue_loader_lib_template_compiler_index_id_data_v_6a859102_hasScoped_true_transformToRequire_video_src_source_src_img_src_image_xlink_href_node_modules_mpvue_loader_lib_selector_type_template_index_0_list_vue__ = __webpack_require__(103);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_mpvue_loader_lib_selector_type_script_index_0_list_vue__ = __webpack_require__(104);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_mpvue_loader_lib_template_compiler_index_id_data_v_6a859102_hasScoped_true_transformToRequire_video_src_source_src_img_src_image_xlink_href_node_modules_mpvue_loader_lib_selector_type_template_index_0_list_vue__ = __webpack_require__(105);
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(101)
+  __webpack_require__(103)
 }
-var normalizeComponent = __webpack_require__(0)
+var normalizeComponent = __webpack_require__(14)
 /* script */
 
 /* template */
@@ -54,19 +54,26 @@ if (false) {(function () {
 
 /***/ }),
 
-/***/ 101:
+/***/ 103:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 102:
+/***/ 104:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_api__ = __webpack_require__(17);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuex__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_babel_runtime_helpers_asyncToGenerator__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_babel_runtime_helpers_asyncToGenerator___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_babel_runtime_helpers_asyncToGenerator__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils_api__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__store_store__ = __webpack_require__(35);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_vuex__ = __webpack_require__(12);
+
+
 //
 //
 //
@@ -135,34 +142,71 @@ if (false) {(function () {
 //
 //
 //
+//
+//
+//
+//
+
+
 
 
 
 /* harmony default export */ __webpack_exports__["a"] = ({
   data: function data() {
     return {
-      background: 'https://wx.qlogo.cn/mmopen/vi_32/ateb2NiaL4qEb0icXBSeOfCFAicqylicQOzTTeejUJ0oNoWP2Hib1tkAdr6gcD85Y6v7yynKuZ4YZmUol1fc3zaVusw/132'
+      background: 'https://wx.qlogo.cn/mmopen/vi_32/ateb2NiaL4qEb0icXBSeOfCFAicqylicQOzTTeejUJ0oNoWP2Hib1tkAdr6gcD85Y6v7yynKuZ4YZmUol1fc3zaVusw/132',
+      qrImg: ''
     };
   },
 
 
   components: {},
 
-  computed: {},
+  computed: {
+    userInfo: function userInfo() {
+      return __WEBPACK_IMPORTED_MODULE_3__store_store__["a" /* default */].state.userInfo;
+    }
+  },
 
-  mounted: function mounted() {},
+  mounted: function mounted() {
+    // console.log(this.userInfo)
+  },
 
 
   methods: {
     editor: function editor() {
       this.$router.push({ path: '/pages/person/editCard' });
+    },
+    handleQrcode: function handleQrcode() {
+      var _this = this;
+
+      return __WEBPACK_IMPORTED_MODULE_1_babel_runtime_helpers_asyncToGenerator___default()( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.mark(function _callee() {
+        return __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                // //   console.log(store.state.userInfo)
+                //   var data = {strOpenId: store.state.userInfo.strOpenId, CompanyId: '2' } // store.state.userInfo.CompanyId
+                //   //   console.log(data)
+                //   var res = await api.Get_CompanyCode(data)
+                //   this.qrImg = 'data:image/png/;base64,' + res
+                //   console.log(res)
+                _this.$router.push({ path: '/pages/person/qrcode' });
+
+              case 1:
+              case 'end':
+                return _context.stop();
+            }
+          }
+        }, _callee, _this);
+      }))();
     }
   }
 });
 
 /***/ }),
 
-/***/ 103:
+/***/ 105:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -172,7 +216,7 @@ var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._sel
   }, [_c('div', {
     staticClass: "me-header card-bg",
     style: ({
-      backgroundImage: 'url(' + _vm.background + ')'
+      backgroundImage: 'url(' + _vm.userInfo.strBackground + ')'
     })
   }, [_c('div', {
     staticClass: "me-header-cont  p-y-2"
@@ -190,7 +234,7 @@ var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._sel
   }, [_c('i-avatar', {
     attrs: {
       "size": "large",
-      "src": "https://i.loli.net/2017/08/21/599a521472424.jpg",
+      "src": _vm.userInfo.strAvatarUrl,
       "mpcomid": '0'
     }
   })], 1), _vm._v(" "), _c('i-col', {
@@ -201,9 +245,9 @@ var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._sel
     }
   }, [_c('p', {
     staticClass: "me-title"
-  }, [_vm._v("董小姐")]), _vm._v(" "), _c('p', {
+  }, [_vm._v(_vm._s(_vm.userInfo.strName))]), _vm._v(" "), _c('p', {
     staticClass: "me-sub"
-  }, [_vm._v("智慧美貌集一身")])], 1), _vm._v(" "), _c('i-col', {
+  }, [_vm._v(_vm._s(_vm.userInfo.strPosition))])], 1), _vm._v(" "), _c('i-col', {
     attrs: {
       "i-class": "",
       "span": 2,
@@ -229,11 +273,11 @@ var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._sel
     staticClass: "me-b p-x-2"
   }, [_c('p', {
     staticClass: "me-title"
-  }, [_vm._v("广东印生活网络有限公司")]), _vm._v(" "), _c('p', {
+  }, [_vm._v(_vm._s(_vm.userInfo.strCompany))]), _vm._v(" "), _c('p', {
     staticClass: "me-sub"
-  }, [_vm._v("电话：1353699106")]), _vm._v(" "), _c('p', {
+  }, [_vm._v("电话：" + _vm._s(_vm.userInfo.strMobile))]), _vm._v(" "), _c('p', {
     staticClass: "me-sub"
-  }, [_vm._v("邮箱：1353699106")])], 1)], 1)])]), _vm._v(" "), _c('div', {
+  }, [_vm._v("邮箱：" + _vm._s(_vm.userInfo.strEmail))])], 1)], 1)])]), _vm._v(" "), _c('div', {
     staticClass: "me-header-b bgf m-b-2"
   }, [_c('i-row', {
     attrs: {
@@ -248,7 +292,7 @@ var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._sel
     }
   }, [_c('p', {
     staticClass: "text-oh"
-  }, [_vm._v("0")]), _vm._v(" "), _c('p', {
+  }, [_vm._v(_vm._s(_vm.userInfo.intHits))]), _vm._v(" "), _c('p', {
     staticClass: "center-a"
   }, [_c('i-icon', {
     attrs: {
@@ -265,7 +309,7 @@ var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._sel
     }
   }, [_c('p', {
     staticClass: "text-oh"
-  }, [_vm._v("0")]), _vm._v(" "), _c('p', {
+  }, [_vm._v(_vm._s(_vm.userInfo.intLikes))]), _vm._v(" "), _c('p', {
     staticClass: "center-a "
   }, [_c('i-icon', {
     attrs: {
@@ -282,7 +326,7 @@ var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._sel
     }
   }, [_c('p', {
     staticClass: "text-oh"
-  }, [_vm._v("0")]), _vm._v(" "), _c('p', {
+  }, [_vm._v(_vm._s(_vm.userInfo.intCollects))]), _vm._v(" "), _c('p', {
     staticClass: "center-a"
   }, [_c('i-icon', {
     attrs: {
@@ -314,11 +358,11 @@ var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._sel
       "span": "21",
       "mpcomid": '16'
     }
-  }, [_vm._v("风流倜傥，年少多金,人见人爱风流倜傥，年少多金,人见人爱风流倜傥，年少多金,人见人爱风流倜傥，年少多金,人见人爱风流倜傥，年少多金,人见人爱风流倜傥，年少多金,人见人爱")])], 1)], 1), _vm._v(" "), _c('div', {
+  }, [_vm._v(_vm._s(_vm.userInfo.strIntro))])], 1)], 1), _vm._v(" "), _c('div', {
     staticClass: "bgf"
   }, [_c('i-cell-group', {
     attrs: {
-      "mpcomid": '22'
+      "mpcomid": '20'
     }
   }, [_c('i-cell', {
     attrs: {
@@ -335,33 +379,29 @@ var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._sel
       "mpcomid": '18'
     },
     slot: "icon"
-  })], 1), _vm._v(" "), _c('i-cell', {
-    attrs: {
-      "title": "名片夹",
-      "is-link": "",
-      "url": "/pages/person/cardList",
-      "mpcomid": '21'
-    }
-  }, [_c('i-icon', {
-    attrs: {
-      "type": "businesscard_fill",
-      "size": "22",
-      "color": "#2d8cf0",
-      "mpcomid": '20'
-    },
-    slot: "icon"
   })], 1)], 1)], 1), _vm._v(" "), _c('div', {
     staticClass: "submit-btn"
   }, [_c('i-button', {
     attrs: {
       "type": "primary",
       "eventid": '1',
-      "mpcomid": '23'
+      "mpcomid": '21'
     },
     on: {
       "click": _vm.handleClick
     }
-  }, [_vm._v("递名片")])], 1)])
+  }, [_vm._v("递名片")])], 1), _vm._v(" "), _c('div', {
+    staticClass: "submit-btn"
+  }, [_c('i-button', {
+    attrs: {
+      "type": "primary",
+      "eventid": '2',
+      "mpcomid": '22'
+    },
+    on: {
+      "click": _vm.handleQrcode
+    }
+  }, [_vm._v("生成二维码")])], 1)])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -376,5 +416,5 @@ if (false) {
 
 /***/ })
 
-},[145]);
+},[119]);
 //# sourceMappingURL=list.js.map
